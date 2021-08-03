@@ -160,3 +160,7 @@ provider "aws" {
    #  key2 = "another value"
  #}
 
+output "anything" {
+   value  = aws_vpc.prod-vpc.cidr_block
+
+}
