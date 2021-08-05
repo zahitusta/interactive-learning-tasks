@@ -1,9 +1,9 @@
 resource "aws_security_group" "external_by_terraform" {
   name        = "external_by_terraform"
   description = "Allow Mysql traffic to wordpress"
- 
-  vpc_id      = "vpc-0c66b1fccdca4bb91"
- 
+
+  vpc_id = "vpc-0c66b1fccdca4bb91"
+
   ingress {
     description = "Allow mysql"
     from_port   = 22
@@ -24,16 +24,16 @@ resource "aws_security_group" "external_by_terraform" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [
-        "0.0.0.0/0",
+      "0.0.0.0/0",
     ]
   }
- ingress {
+  ingress {
     description = "Allow mysql"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = [
-        "0.0.0.0/0",
+      "0.0.0.0/0",
     ]
   }
   egress {
